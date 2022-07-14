@@ -3,6 +3,7 @@ class CreateAnswerableQuestions < ActiveRecord::Migration[7.0]
     create_table :answerable_questions do |t|
       t.references :questionable, polymorphic: true, null: false
       t.text :title, null: false, default: ''
+      t.text :note, null: false, default: ''
       t.integer :type, null: false, default: 0
       t.integer :weight, null: false, default: 0
       t.boolean :mandatory, null: false, default: true
